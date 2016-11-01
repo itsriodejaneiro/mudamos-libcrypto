@@ -37,5 +37,5 @@
     "gulp-util": "^3.0.7",
     "mocha": "^3.1.2"
   },
-  "main": "./lib/lib-cripto.js"
+  "main": "./lib/lib-crypto.js"
 }

@@ -15,7 +15,7 @@ gulp.task('default', function () {
     return gulp.src(files)
         .pipe(mocha({reporter: 'nyan'}))
         .pipe(babel({presets: ['es2015']}))
-        .pipe(concat('libcripto.js'))
+        .pipe(concat('lib-crypto.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist'));        
 });

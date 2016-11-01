@@ -1,11 +1,11 @@
-Mudamos LibCripto 
+Mudamos LibCrypto 
 
 Creates and manipulates seeds and wallets for Blockchain
 =======
 
-[NPM Link](https://www.npmjs.org/package/mudamos-lib-cripto)
+[NPM Link](https://www.npmjs.org/package/mudamos-lib-crypto)
 
-[![NPM Package](https://img.shields.io/npm/v/@cycle/core.svg)](https://www.npmjs.org/package/mudamos-lib-cripto)
+[![NPM Package](https://img.shields.io/npm/v/@cycle/core.svg)](https://www.npmjs.org/package/mudamos-lib-crypto)
 
 A module for [mudamos](https://github.com/itsriodejaneiro) that implements [wallets and seeds fro Blockchain](https://github.com/itsriodejaneiro/mudamos-libcrypto).
 
@@ -14,7 +14,7 @@ A module for [mudamos](https://github.com/itsriodejaneiro) that implements [wall
 This library is distributed in the npm packaging systems.
 
 ```sh
-npm install mudamos-lib-criptio
+npm install mudamos-lib-crypto
 ```
 
 There are many examples of how to use it on the developer guide below.
@@ -22,13 +22,13 @@ There are many examples of how to use it on the developer guide below.
 ### Importing npm module
 
 ```javascript
-var MudamosLibCripto = require('mudamos-lib-cripto');
+var MudamosLibCrypto = require('mudamos-lib-crypto');
 ```
 
 
 ### To CreateSeed:
 ```javascript
-MudamosLibCripto.createSeed('ENGLISH', 'ExtraEntropy');
+MudamosLibCrypto.createSeed('ENGLISH', 'ExtraEntropy');
 ```
 ```
 Parameters
@@ -41,7 +41,7 @@ Obs.: Extraentroy is used to generate extra random seed
 
 ### To ValidateSeed:
 ```javascript
-let result = MudamosLibCripto.validateSeed('reveal teach web swift enable ice elevator six amount piano about amused');
+let result = MudamosLibCrypto.validateSeed('reveal teach web swift enable ice elevator six amount piano about amused');
 ```
 ```
 Parameters
@@ -53,7 +53,7 @@ Return
 
 ### To ValidateSeedWithLang:
 ```javascript
-let result = MudamosLibCripto.validateSeedWithLang('ENGLISH','reveal teach web swift enable ice elevator six amount piano about amused');
+let result = MudamosLibCrypto.validateSeedWithLang('ENGLISH','reveal teach web swift enable ice elevator six amount piano about amused');
 ```
 ```
 Parameters
@@ -65,7 +65,7 @@ Return
 
 ### To CreateWallet:
 ```javascript
-let wallet =  MudamosLibCripto.createWallet('reveal teach web swift enable ice elevator six amount piano about amused');
+let wallet =  MudamosLibCrypto.createWallet('reveal teach web swift enable ice elevator six amount piano about amused');
 ```
 ```
 Parameters
@@ -79,7 +79,7 @@ Return
 ```javascript
 let seed = 'reveal teach web swift enable ice elevator six amount piano about amused';
 let publicKey = '1KeCnK8U9STYrMip1eikLpViiVPjEHdPEX';
-let result =  MudamosLibCripto.validateWallet(seed,publicKey);
+let result =  MudamosLibCrypto.validateWallet(seed,publicKey);
 ```
 ```
 Parameters
@@ -93,7 +93,7 @@ Return
 ```javascript
 let seed = 'reveal teach web swift enable ice elevator six amount piano about amused';
 let message = 'Menssage'
-let result =  MudamosLibCripto.signMessage(seed,message);
+let result =  MudamosLibCrypto.signMessage(seed,message);
 ```
 ```
 Parameters
@@ -108,7 +108,7 @@ Return
 let publicKey = '1KeCnK8U9STYrMip1eikLpViiVPjEHdPEX'
 let message = 'Menssage';
 let signature = 'HwLX7WYKr40ZOj0eP99LsGRv+OnkKE/6X8j8//X1RAWQcYpwXY3u9txnSCVL8ifK47rOOQfdomCd5/ltAkuyeXU=';
-let result =  MudamosLibCripto.verifyMessage(publicKey, message, signature);
+let result =  MudamosLibCrypto.verifyMessage(publicKey, message, signature);
 ```
 ```
 Parameters
@@ -121,7 +121,7 @@ Return
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://CONTRIBUTING.md) on the main mudamos-lib-cripto repo for information about how to contribute.
+See [CONTRIBUTING.md](https://CONTRIBUTING.md) on the main mudamos-lib-crypto repo for information about how to contribute.
 
 ## License
 
