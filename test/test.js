@@ -1,28 +1,28 @@
 var assert = require('assert');
-var LibCripto = require('./../lib/lib-cripto');
+var LibCrypto = require('./../lib/lib-crypto');
 
-describe('LibCripto', function () {
+describe('LibCrypto', function () {
     this.timeout(30000);
     describe('CreateSeedAndWallet', function () {
         it('CreateSeedAndWallet With Language and ExtraEntropy', function(){
-            let seedCreate = LibCripto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', 'ExtraEntropy');
+            let seedCreate = LibCrypto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', 'ExtraEntropy');
             assert.notEqual(seedCreate,null);
         })
           it('CreateSeedAndWallet Without Parameters', function(){
-            let seedCreate = LibCripto.createSeedAndWallet();
+            let seedCreate = LibCrypto.createSeedAndWallet();
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeedAndWallet With ExtraEntropy Undefined', function(){
-            let seedCreate = LibCripto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', undefined);
+            let seedCreate = LibCrypto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', undefined);
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeedAndWallet With Language Undefined', function(){
-            let seedCreate = LibCripto.createSeedAndWallet(undefined, 'ExtraEntropy');
+            let seedCreate = LibCrypto.createSeedAndWallet(undefined, 'ExtraEntropy');
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeedAndWallet With ExtraEntropy Null', function(){
             try{
-                let seedCreate = LibCripto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', null);
+                let seedCreate = LibCrypto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', null);
             }catch(ex){
                 assert.notEqual(ex.message,null);
                 assert.equal(ex.message,'ExtraEntropy is set but not a string');
@@ -30,12 +30,12 @@ describe('LibCripto', function () {
             }
         })
         it('CreateSeedAndWallet With Language Null', function(){
-            let seedCreate = LibCripto.createSeedAndWallet(null, 'ExtraEntropy');
+            let seedCreate = LibCrypto.createSeedAndWallet(null, 'ExtraEntropy');
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeedAndWallet With Language Null and ExtraEntropy Null', function(){
             try{
-                let seedCreate = LibCripto.createSeedAndWallet(null, null);
+                let seedCreate = LibCrypto.createSeedAndWallet(null, null);
             }catch(ex){
                 assert.notEqual(ex.message,null);
                 assert.equal(ex.message,'ExtraEntropy is set but not a string');
@@ -43,16 +43,16 @@ describe('LibCripto', function () {
             }
         })
         it('CreateSeedAndWallet With Language Undefined and ExtraEntropy Undefined', function(){
-            let seedCreate = LibCripto.createSeedAndWallet(undefined, undefined);
+            let seedCreate = LibCrypto.createSeedAndWallet(undefined, undefined);
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeedAndWallet With Language Number', function(){
-            let seedCreate = LibCripto.createSeedAndWallet(123);
+            let seedCreate = LibCrypto.createSeedAndWallet(123);
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeedAndWallet With Language Number and ExtraEntropy Number', function(){
             try{
-                let seedCreate = LibCripto.createSeedAndWallet(123,1234);
+                let seedCreate = LibCrypto.createSeedAndWallet(123,1234);
             }catch(ex){
                 assert.notEqual(ex.message,null);
                 assert.equal(ex.message,'ExtraEntropy is set but not a string');
@@ -62,25 +62,24 @@ describe('LibCripto', function () {
     });
     describe('CreateSeed', function () {
         it('CreateSeed With Language and ExtraEntropy', function(){
-            let seedCreate = LibCripto.createSeed('BRAZILIAN-PORTUGUESE', 'ExtraEntropy');
-            console.log(seedCreate);
+            let seedCreate = LibCrypto.createSeed('BRAZILIAN-PORTUGUESE', 'ExtraEntropy');
             assert.notEqual(seedCreate,null);
         })
           it('CreateSeed Without Parameters', function(){
-            let seedCreate = LibCripto.createSeed();
+            let seedCreate = LibCrypto.createSeed();
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeed With ExtraEntropy Undefined', function(){
-            let seedCreate = LibCripto.createSeed('BRAZILIAN-PORTUGUESE', undefined);
+            let seedCreate = LibCrypto.createSeed('BRAZILIAN-PORTUGUESE', undefined);
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeed With Language Undefined', function(){
-            let seedCreate = LibCripto.createSeed(undefined, 'ExtraEntropy');
+            let seedCreate = LibCrypto.createSeed(undefined, 'ExtraEntropy');
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeed With ExtraEntropy Null', function(){
             try{
-            let seedCreate = LibCripto.createSeed('BRAZILIAN-PORTUGUESE', null);
+            let seedCreate = LibCrypto.createSeed('BRAZILIAN-PORTUGUESE', null);
             }catch(ex){
                 assert.notEqual(ex.message,null);
                 assert.equal(ex.message,'ExtraEntropy is set but not a string');
@@ -88,12 +87,12 @@ describe('LibCripto', function () {
             }
         })
         it('CreateSeed With Language Null', function(){
-            let seedCreate = LibCripto.createSeed(null, 'ExtraEntropy');
+            let seedCreate = LibCrypto.createSeed(null, 'ExtraEntropy');
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeed With Language Null and ExtraEntropy Null', function(){
             try{
-                let seedCreate = LibCripto.createSeed(null, null);
+                let seedCreate = LibCrypto.createSeed(null, null);
             }catch(ex){
                 assert.notEqual(ex.message,null);
                 assert.equal(ex.message,'ExtraEntropy is set but not a string');
@@ -101,16 +100,16 @@ describe('LibCripto', function () {
             }
         })
         it('CreateSeed With Language Undefined and ExtraEntropy Undefined', function(){
-            let seedCreate = LibCripto.createSeed(undefined, undefined);
+            let seedCreate = LibCrypto.createSeed(undefined, undefined);
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeed With Language Number', function(){
-            let seedCreate = LibCripto.createSeed(123);
+            let seedCreate = LibCrypto.createSeed(123);
             assert.notEqual(seedCreate,null);
         })
         it('CreateSeed With Language Number and ExtraEntropy Number', function(){
             try{
-                let seedCreate = LibCripto.createSeed(123,1234);
+                let seedCreate = LibCrypto.createSeed(123,1234);
             }catch(ex){
                 assert.notEqual(ex.message,null);
                 assert.equal(ex.message,'ExtraEntropy is set but not a string');
@@ -120,32 +119,32 @@ describe('LibCripto', function () {
     });
     describe('ValidateSeed', function () {
         it('ValidateSeed With Seed', function(){
-            let result = LibCripto.validateSeed('mosca decorar verificar aluno fundir orgulhoso bonus palma ninho giro mesmo substituir');
+            let result = LibCrypto.validateSeed('mosca decorar verificar aluno fundir orgulhoso bonus palma ninho giro mesmo substituir');
             console.log(result);
             assert.equal(result,true);
         })
         it('ValidateSeed With Null', function(){
-            let result = LibCripto.validateSeed(null);
+            let result = LibCrypto.validateSeed(null);
             assert.equal(result,false);
         })
         it('ValidateSeed With Undefined', function(){
-            let result = LibCripto.validateSeed(undefined);
+            let result = LibCrypto.validateSeed(undefined);
             assert.equal(result,false);
         })
          it('ValidateSeed Without Parameters', function(){
-            let result = LibCripto.validateSeed();
+            let result = LibCrypto.validateSeed();
             assert.equal(result,false);
         })
         it('ValidateSeed With 11 words', function(){
             try{
-            let result = LibCripto.validateSeed('ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta');
+            let result = LibCrypto.validateSeed('ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta');
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
         })
         it('ValidateSeed With 13 words', function(){
             try{
-                let result = LibCripto.validateSeed('ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta ok zebra');
+                let result = LibCrypto.validateSeed('ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta ok zebra');
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
@@ -153,14 +152,14 @@ describe('LibCripto', function () {
         })
         it('ValidateSeed With Number', function(){
             try{
-            let result = LibCripto.validateSeed(123);
+            let result = LibCrypto.validateSeed(123);
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
         })
         it('ValidateSeed With Seed Other Parameters', function(){
             try{
-            let result = LibCripto.validateSeed('AAAAAAAAAAA');
+            let result = LibCrypto.validateSeed('AAAAAAAAAAA');
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
@@ -168,71 +167,71 @@ describe('LibCripto', function () {
     });
     describe('ValidateSeedWithLang', function () {
          it('ValidateSeedWithLang With Lang and Seed', function(){
-            let result = LibCripto.validateSeedWithLang('BRAZILIAN-PORTUGUESE','mosca decorar verificar aluno fundir orgulhoso bonus palma ninho giro mesmo substituir');
+            let result = LibCrypto.validateSeedWithLang('BRAZILIAN-PORTUGUESE','mosca decorar verificar aluno fundir orgulhoso bonus palma ninho giro mesmo substituir');
             assert.equal(result,true);
         })
         it('ValidateSeedWithLang With Lang Null', function(){
-            let result = LibCripto.validateSeedWithLang(null,'mosca decorar verificar aluno fundir orgulhoso bonus palma ninho giro mesmo substituir');
+            let result = LibCrypto.validateSeedWithLang(null,'mosca decorar verificar aluno fundir orgulhoso bonus palma ninho giro mesmo substituir');
             assert.equal(result,true);
         })
         it('ValidateSeedWithLang With Seed Null', function(){
-            let result = LibCripto.validateSeedWithLang('BRAZILIAN-PORTUGUESE',null);
+            let result = LibCrypto.validateSeedWithLang('BRAZILIAN-PORTUGUESE',null);
             assert.equal(result,false);
         })
         it('ValidateSeedWithLang With Lang Undefined', function(){
-            let result = LibCripto.validateSeedWithLang(undefined);
+            let result = LibCrypto.validateSeedWithLang(undefined);
             assert.equal(result,false);
         })
         it('ValidateSeedWithLang With Lang and Seed Undefined', function(){
-            let result = LibCripto.validateSeedWithLang(undefined, undefined);
+            let result = LibCrypto.validateSeedWithLang(undefined, undefined);
             assert.equal(result,false);
         })
         it('ValidateSeedWithLang With Lang and Seed Null', function(){
-            let result = LibCripto.validateSeedWithLang(null, null);
+            let result = LibCrypto.validateSeedWithLang(null, null);
             assert.equal(result,false);
         })
          it('ValidateSeedWithLang Without Parameters', function(){
-            let result = LibCripto.validateSeedWithLang();
+            let result = LibCrypto.validateSeedWithLang();
             assert.equal(result,false);
         })
         it('ValidateSeedWithLang With Lang and Seed 11 words', function(){
             try{
-                let result = LibCripto.validateSeedWithLang('BRAZILIAN-PORTUGUESE','ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta');
+                let result = LibCrypto.validateSeedWithLang('BRAZILIAN-PORTUGUESE','ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta');
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
         })
         it('ValidateSeedWithLang With Lang and Seed 13 words', function(){
             try{
-                let result = LibCripto.validateSeedWithLang('BRAZILIAN-PORTUGUESE','ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta ok zebra');
+                let result = LibCrypto.validateSeedWithLang('BRAZILIAN-PORTUGUESE','ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta ok zebra');
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
         })
         it('ValidateSeedWithLang With Lang Number', function(){
             try{
-                let result = LibCripto.validateSeedWithLang(3333);
+                let result = LibCrypto.validateSeedWithLang(3333);
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
         })
         it('ValidateSeedWithLang With Lang Number and Seed Number', function(){
             try{
-                let result = LibCripto.validateSeedWithLang(123, 123);
+                let result = LibCrypto.validateSeedWithLang(123, 123);
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
         })
         it('ValidateSeedWithLang With Other Parameters Lang', function(){
             try{
-                let result = LibCripto.validateSeedWithLang('AAAAAAAAAAA');
+                let result = LibCrypto.validateSeedWithLang('AAAAAAAAAAA');
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
         })
         it('ValidateSeedWithLang With Other Parameters Lang and Seed', function(){
             try{
-                let result = LibCripto.validateSeedWithLang('AAAAAAAAAAA','BBBBBBBBBBBB');
+                let result = LibCrypto.validateSeedWithLang('AAAAAAAAAAA','BBBBBBBBBBBB');
             }catch(ex){
                 assert.equal(ex.message,'Index out of range'); 
             }
@@ -240,28 +239,28 @@ describe('LibCripto', function () {
     });
     describe('CreateWallet', function () {
         it('CreateWallet With Seed', function(){
-            let wallet =  LibCripto.createWallet('ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta ok');
+            let wallet =  LibCrypto.createWallet('ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta ok');
             assert.equal(wallet.success,true);
             assert.equal(wallet.message,'ok');
             assert.notEqual(wallet.publicKey,'ok');
         })
         it('CreateWallet Without Seed', function(){
             try{
-                let wallet =  LibCripto.createWallet();
+                let wallet =  LibCrypto.createWallet();
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
         })
         it('CreateWallet With Seed Null', function(){
             try{
-                let wallet =  LibCripto.createWallet(null);
+                let wallet =  LibCrypto.createWallet(null);
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
         })
         it('CreateWallet With Seed Undefine', function(){
             try{
-                let wallet =  LibCripto.createWallet(undefined);
+                let wallet =  LibCrypto.createWallet(undefined);
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -271,14 +270,14 @@ describe('LibCripto', function () {
         it('ValidateWallet With Seed and PublicKey', function(){
             let seed = 'ferramenta marcha batata escorpiao suspeito somente conectados obrigar qualquer humano conhecer penhasco';
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm';
-            let result =  LibCripto.validateWallet(seed,publicKey);
+            let result =  LibCrypto.validateWallet(seed,publicKey);
             assert.equal(result,true);
         })
         it('ValidateWallet With Seed Null and PublicKey Null', function(){
             let seed = null;
             let publicKey = null;
             try{
-                let result =  LibCripto.validateWallet(seed,publicKey);
+                let result =  LibCrypto.validateWallet(seed,publicKey);
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -287,7 +286,7 @@ describe('LibCripto', function () {
             let seed = undefined;
             let publicKey = undefined;
             try{
-                let result =  LibCripto.validateWallet(seed,publicKey);
+                let result =  LibCrypto.validateWallet(seed,publicKey);
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -296,7 +295,7 @@ describe('LibCripto', function () {
             let seed = 'ferramenta marcha batata escorpiao suspeito somente conectados obrigar qualquer humano conhecer penhasco';
             let publicKey = null;
             try{
-                let wallet =  LibCripto.validateWallet();
+                let wallet =  LibCrypto.validateWallet();
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -305,7 +304,7 @@ describe('LibCripto', function () {
             let seed = null;
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm';
             try{
-                let wallet =  LibCripto.validateWallet();
+                let wallet =  LibCrypto.validateWallet();
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -314,7 +313,7 @@ describe('LibCripto', function () {
             let seed = 'ferramenta marcha batata escorpiao suspeito somente conectados obrigar qualquer humano conhecer penhasco';
             let publicKey = undefined;            
             try{
-                let wallet =  LibCripto.validateWallet();
+                let wallet =  LibCrypto.validateWallet();
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -323,7 +322,7 @@ describe('LibCripto', function () {
             let seed = undefined;
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm';            
             try{
-                let wallet =  LibCripto.validateWallet();
+                let wallet =  LibCrypto.validateWallet();
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -333,14 +332,14 @@ describe('LibCripto', function () {
         it('SignMessage With Seed and Message', function(){
             let seed = 'ferramenta marcha batata escorpiao suspeito somente conectados obrigar qualquer humano conhecer penhasco';
             let message = 'Menssage'
-            let result =  LibCripto.signMessage(seed,message);
+            let result =  LibCrypto.signMessage(seed,message);
             assert.notEqual(result,null);
         })
         it('SignMessage With Seed Null and Message Null', function(){
             let seed = null;
             let message = null;
             try{
-                let result =  LibCripto.signMessage(seed,message);
+                let result =  LibCrypto.signMessage(seed,message);
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -349,7 +348,7 @@ describe('LibCripto', function () {
             let seed = undefined;
             let message = undefined;
             try{
-                let result =  LibCripto.signMessage(seed,message);
+                let result =  LibCrypto.signMessage(seed,message);
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -358,7 +357,7 @@ describe('LibCripto', function () {
             let seed = 'ferramenta marcha batata escorpiao suspeito somente conectados obrigar qualquer humano conhecer penhasco';
             let message = null;
             try{
-                let wallet =  LibCripto.signMessage(seed,message);
+                let wallet =  LibCrypto.signMessage(seed,message);
             }catch(ex){
                 assert.equal(ex.message,'Message can not be empty'); 
             }
@@ -367,7 +366,7 @@ describe('LibCripto', function () {
             let seed = null;
             let message = 'Menssage'
             try{
-                let wallet =  LibCripto.signMessage(seed,message);
+                let wallet =  LibCrypto.signMessage(seed,message);
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -376,7 +375,7 @@ describe('LibCripto', function () {
             let seed = 'ferramenta marcha batata escorpiao suspeito somente conectados obrigar qualquer humano conhecer penhasco';
             let message = undefined;            
             try{
-                let wallet =  LibCripto.signMessage(seed,message);
+                let wallet =  LibCrypto.signMessage(seed,message);
             }catch(ex){
                 assert.equal(ex.message,'Message can not be empty'); 
             }
@@ -385,14 +384,14 @@ describe('LibCripto', function () {
             let seed = undefined;
             let message = 'Menssage'            
             try{
-                let wallet =  LibCripto.signMessage(seed,message);
+                let wallet =  LibCrypto.signMessage(seed,message);
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
         })      
         it('SignMessage Without Parameters', function(){
             try{
-                let wallet =  LibCripto.signMessage();
+                let wallet =  LibCrypto.signMessage();
             }catch(ex){
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
@@ -403,7 +402,7 @@ describe('LibCripto', function () {
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
             let message = 'Menssage';
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
-            let result =  LibCripto.verifyMessage(publicKey, message, signature);
+            let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             assert.equal(result,true);
         })
         it('SignMessage With PublicKey , Message and Signature Not Valid', function(){
@@ -411,7 +410,7 @@ describe('LibCripto', function () {
             let message = 'Menssage';
             let signature = 'AAAAAAA';
             try{
-                let result =  LibCripto.verifyMessage(publicKey, message, signature);
+                let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
                 assert.equal(ex.message,'Checksum mismatch'); 
             }       
@@ -421,7 +420,7 @@ describe('LibCripto', function () {
             let message = 'Menssage';
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
             try{
-                let result =  LibCripto.verifyMessage(publicKey, message, signature);
+                let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
                 assert.equal(ex.message,'Public Key can not be empty'); 
             }            
@@ -431,7 +430,7 @@ describe('LibCripto', function () {
             let message = 'Menssage';
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
             try{
-                let result =  LibCripto.verifyMessage(publicKey, message, signature);
+                let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
                 assert.equal(ex.message,'Public Key can not be empty'); 
             }   
@@ -441,7 +440,7 @@ describe('LibCripto', function () {
             let message = null;
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
             try{
-                let result =  LibCripto.verifyMessage(publicKey, message, signature);
+                let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
                 assert.equal(ex.message,'Message can not be empty'); 
             }            
@@ -451,7 +450,7 @@ describe('LibCripto', function () {
             let message = undefined;
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
             try{
-                let result =  LibCripto.verifyMessage(publicKey, message, signature);
+                let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
                 assert.equal(ex.message,'Message can not be empty'); 
             }   
@@ -461,7 +460,7 @@ describe('LibCripto', function () {
             let message = 'Menssage';
             let signature = null;
             try{
-                let result =  LibCripto.verifyMessage(publicKey, message, signature);
+                let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
                 assert.equal(ex.message,'Signature can not be empty'); 
             }   
@@ -471,7 +470,7 @@ describe('LibCripto', function () {
             let message = 'Menssage';
             let signature = undefined;
             try{
-                let result =  LibCripto.verifyMessage(publicKey, message, signature);
+                let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
                 assert.equal(ex.message,'Signature can not be empty'); 
             }   
