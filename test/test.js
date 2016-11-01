@@ -120,7 +120,6 @@ describe('LibCrypto', function () {
     describe('ValidateSeed', function () {
         it('ValidateSeed With Seed', function(){
             let result = LibCrypto.validateSeed('mosca decorar verificar aluno fundir orgulhoso bonus palma ninho giro mesmo substituir');
-            console.log(result);
             assert.equal(result,true);
         })
         it('ValidateSeed With Null', function(){
