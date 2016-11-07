@@ -14,7 +14,7 @@ A module for [mudamos](https://github.com/itsriodejaneiro) that implements [wall
 This library is distributed in the npm packaging systems.
 
 ```sh
-npm install mudamos-lib-crypto
+npm install mudamos-libcrypto
 ```
 
 There are many examples of how to use it on the developer guide below.
