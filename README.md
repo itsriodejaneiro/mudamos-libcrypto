@@ -39,24 +39,6 @@ Return
 Obs.: Extraentroy is used to generate extra random seed
 ```
 
-### To CreateSeedAndWallet:
-```javascript
-MudamosLibCrypto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', 'ExtraEntropy');
-```
-```
-Parameters
-    Language:  ENGLISH, BRAZILIAN-PORTUGUESE
-    ExtraEntropy: Any string
-Return
-    Wallet {
-      message: string,
-      success: boolean,
-      publicKey: string,
-      seed: string 
-    }
-Obs.: Extraentroy is used to generate extra random seed
-```
-
 ### To ValidateSeed:
 ```javascript
 let result = MudamosLibCrypto.validateSeed('veterano pelicula verdadeiro cambalhota curso poeta coisa balanco patife companhia governo regra');
