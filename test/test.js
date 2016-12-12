@@ -6,7 +6,6 @@ describe('LibCrypto', function () {
     describe('CreateSeedAndWallet', function () {
         it('CreateSeedAndWallet With Language and ExtraEntropy', function(){
             let seedCreate = LibCrypto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', 'ExtraEntropy');
-            console.log(seedCreate);
             assert.notEqual(seedCreate,null);
         })
           it('CreateSeedAndWallet Without Parameters', function(){
@@ -334,7 +333,6 @@ describe('LibCrypto', function () {
             let message = 'Nome do usuario;Endereco do usuario;Titulo de Eleitor;20161201';
             let difficulty = 2;
             let result =  LibCrypto.signMessage(seed,message, difficulty);
-	    console.log(result)
             assert.notEqual(result,null);
         })
         it('SignMessage With Seed Null and Message Null', function(){
