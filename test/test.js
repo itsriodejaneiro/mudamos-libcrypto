@@ -2,10 +2,11 @@ var assert = require('assert');
 var LibCrypto = require('./../lib/lib-crypto');
 
 describe('LibCrypto', function () {
-    this.timeout(30000);
+    this.timeout(60000);
     describe('CreateSeedAndWallet', function () {
         it('CreateSeedAndWallet With Language and ExtraEntropy', function(){
             let seedCreate = LibCrypto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', 'ExtraEntropy');
+            console.log(seedCreate);
             assert.notEqual(seedCreate,null);
         })
           it('CreateSeedAndWallet Without Parameters', function(){
@@ -170,7 +171,7 @@ describe('LibCrypto', function () {
             assert.equal(result,true);
         })
         it('ValidateSeedWithLang With Lang Null', function(){
-            let result = LibCrypto.validateSeedWithLang(null,'mosca decorar verificar aluno fundir orgulhoso bonus palma ninho giro mesmo substituir');
+            let result = LibCrypto.validateSeedWithLang(null,'afford drill tuition fancy wrong couch camera arch truly win merge fence');
             assert.equal(result,true);
         })
         it('ValidateSeedWithLang With Seed Null', function(){
@@ -241,7 +242,7 @@ describe('LibCrypto', function () {
             let wallet =  LibCrypto.createWallet('ator suave citar lago surpreendente desfiladeiro picada amigos simbolo prosperar lagosta ok');
             assert.equal(wallet.success,true);
             assert.equal(wallet.message,'ok');
-            assert.notEqual(wallet.publicKey,'ok');
+            assert.equal(wallet.publicKey,'1NtGiFUb7Wr11pWputYr8fqJoctWi1NUUy');
         })
         it('CreateWallet Without Seed', function(){
             try{
@@ -317,7 +318,7 @@ describe('LibCrypto', function () {
                 assert.equal(ex.message,'Seed can not be empty'); 
             }
         })
-        it('ValidateWallet With Seed Undefine', function(){
+        it('ValidateWallet With Seed Undefined', function(){
             let seed = undefined;
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm';            
             try{
@@ -330,8 +331,10 @@ describe('LibCrypto', function () {
     describe('SignMessage', function () {
         it('SignMessage With Seed and Message', function(){
             let seed = 'ferramenta marcha batata escorpiao suspeito somente conectados obrigar qualquer humano conhecer penhasco';
-            let message = 'Menssage'
-            let result =  LibCrypto.signMessage(seed,message);
+            let message = 'Nome do usuario;Endereco do usuario;Titulo de Eleitor;20161201';
+            let difficulty = 2;
+            let result =  LibCrypto.signMessage(seed,message, difficulty);
+	    console.log(result)
             assert.notEqual(result,null);
         })
         it('SignMessage With Seed Null and Message Null', function(){
@@ -363,7 +366,7 @@ describe('LibCrypto', function () {
         })
         it('SignMessage With Seed Null', function(){
             let seed = null;
-            let message = 'Menssage'
+            let message = 'Message'
             try{
                 let wallet =  LibCrypto.signMessage(seed,message);
             }catch(ex){
@@ -381,7 +384,7 @@ describe('LibCrypto', function () {
         })
         it('SignMessage With Seed Undefined', function(){
             let seed = undefined;
-            let message = 'Menssage'            
+            let message = 'Message'            
             try{
                 let wallet =  LibCrypto.signMessage(seed,message);
             }catch(ex){
@@ -399,24 +402,24 @@ describe('LibCrypto', function () {
     describe('VerifyMessage', function () {
         it('SignMessage With PublicKey , Message and Signature Valid', function(){
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
-            let message = 'Menssage';
-            let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
+            let message = 'Nome do usuario;Endereco do usuario;Titulo de Eleitor;20161201';
+            let signature = 'ILv3yBAj5pyIcBMtNQxA+kNukVlJMY7al0vDb2T/T/bWS/NuqbaSZyJ/zbR17jm/kYOM4yuUsfdOQ9bh69V0Zyo=';
             let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             assert.equal(result,true);
         })
         it('SignMessage With PublicKey , Message and Signature Not Valid', function(){
             let publicKey = 'AAAAAAAAAAA'
-            let message = 'Menssage';
+            let message = 'Message';
             let signature = 'AAAAAAA';
             try{
                 let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
-                assert.equal(ex.message,'Checksum mismatch'); 
+                assert.equal(ex.message,'Invalid signature length'); 
             }       
         })
         it('SignMessage With PublicKey Null', function(){
             let publicKey = null;
-            let message = 'Menssage';
+            let message = 'Message';
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
             try{
                 let result =  LibCrypto.verifyMessage(publicKey, message, signature);
@@ -426,7 +429,7 @@ describe('LibCrypto', function () {
         })
         it('SignMessage With PublicKey Undefined', function(){
             let publicKey = undefined;
-            let message = 'Menssage';
+            let message = 'Message';
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
             try{
                 let result =  LibCrypto.verifyMessage(publicKey, message, signature);
@@ -456,7 +459,7 @@ describe('LibCrypto', function () {
         })
         it('SignMessage With Signature Null', function(){
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
-            let message = 'Menssage';
+            let message = 'Message';
             let signature = null;
             try{
                 let result =  LibCrypto.verifyMessage(publicKey, message, signature);
@@ -466,13 +469,26 @@ describe('LibCrypto', function () {
         })
         it('SignMessage With Signature Undefined', function(){
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
-            let message = 'Menssage';
+            let message = 'Message';
             let signature = undefined;
             try{
                 let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             }catch(ex){
                 assert.equal(ex.message,'Signature can not be empty'); 
             }   
+        })
+        it('Mine a block from a signed message', function(){
+            let message = 'Nome do usuario;Endereco do usuario;Titulo de Eleitor;20161201;1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm;H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
+            let difficulty = 3;
+            let block =  LibCrypto.mineMessage(message,difficulty);
+            assert.notEqual(block,null);
+        })
+        it('Check mined block from a signed message', function(){
+            let message = 'Nome do usuario;Endereco do usuario;Titulo de Eleitor;20161201;1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm;H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
+            let difficulty = 3;
+            let block = LibCrypto.mineMessage(message,difficulty);
+            let result =  LibCrypto.checkMinedMessage(message,difficulty,block);
+            assert.equal(result, true);
         })
     });
 });
