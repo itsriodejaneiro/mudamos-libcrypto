@@ -488,5 +488,12 @@ describe('LibCrypto', function () {
             let result =  LibCrypto.checkMinedMessage(message,difficulty,block);
             assert.equal(result, true);
         })
+        it('Check mined block from a signed message', function(){
+            let message = 'fff;13224240;273173730116;2016-12-16T11:12:46.358Z;Lei da Ficha Limpa;1;1Afp2tpLFLfVm6mnmBmsLfveesaoBsun1A;ILLwP7CJZRwBY/KS56965sYhMukUeXbf0js299YrVuqZP/zSNZWZo+nJTXkOPjB321eMonN1dhTkoN5wxK3n3Zk=';
+            let difficulty = 3;
+            let block = 'fff;13224240;273173730116;2016-12-16T11:12:46.358Z;Lei da Ficha Limpa;1;1Afp2tpLFLfVm6mnmBmsLfveesaoBsun1A;ILLwP7CJZRwBY/KS56965sYhMukUeXbf0js299YrVuqZP/zSNZWZo+nJTXkOPjB321eMonN1dhTkoN5wxK3n3Zk=;1351';
+            let result =  LibCrypto.checkMinedMessage(message,difficulty,block);
+            assert.equal(result, true);
+        })
     });
 });
