@@ -2,7 +2,7 @@
   "name": "mudamos-libcrypto",
   "description": "Library for encryption and creation of Wallets in Blockchain",
   "readmeFilename": "README.md",
-  "version": "0.6.2",
+  "version": "0.6.4",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha"
   },

@@ -141,9 +141,3 @@ Return
 ## Contributing
 
 See [CONTRIBUTING.md](https://CONTRIBUTING.md) on the main mudamos-libcrypto repo for information about how to contribute.
-
-## License
-
-Code released under [[to define] license](https://).
-
-Copyright 2016 Mudamos.org.
