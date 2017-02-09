@@ -398,14 +398,14 @@ describe('LibCrypto', function () {
         })    
     });
     describe('VerifyMessage', function () {
-        it('SignMessage With PublicKey , Message and Signature Valid', function(){
+        it('VerifyMessage With PublicKey , Message and Signature Valid', function(){
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
             let message = 'Nome do usuario;Endereco do usuario;Titulo de Eleitor;20161201';
-            let signature = 'ILv3yBAj5pyIcBMtNQxA+kNukVlJMY7al0vDb2T/T/bWS/NuqbaSZyJ/zbR17jm/kYOM4yuUsfdOQ9bh69V0Zyo=';
+            let signature = 'IPLnMpJtbVum4T3VuoRH+k/ElPYdwdknx0UBDt3q2QReZ9u3IUNudEEtUZPqbyNcQnxBpWDw3FM7jF/ZbAvQ0/U=';
             let result =  LibCrypto.verifyMessage(publicKey, message, signature);
             assert.equal(result,true);
         })
-        it('SignMessage With PublicKey , Message and Signature Not Valid', function(){
+        it('VerifyMessage With PublicKey , Message and Signature Not Valid', function(){
             let publicKey = 'AAAAAAAAAAA'
             let message = 'Message';
             let signature = 'AAAAAAA';
@@ -415,7 +415,7 @@ describe('LibCrypto', function () {
                 assert.equal(ex.message,'Invalid signature length'); 
             }       
         })
-        it('SignMessage With PublicKey Null', function(){
+        it('VerifyMessage With PublicKey Null', function(){
             let publicKey = null;
             let message = 'Message';
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
@@ -425,7 +425,7 @@ describe('LibCrypto', function () {
                 assert.equal(ex.message,'Public Key can not be empty'); 
             }            
         })
-        it('SignMessage With PublicKey Undefined', function(){
+        it('VerifyMessage With PublicKey Undefined', function(){
             let publicKey = undefined;
             let message = 'Message';
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
@@ -435,7 +435,7 @@ describe('LibCrypto', function () {
                 assert.equal(ex.message,'Public Key can not be empty'); 
             }   
         })
-        it('SignMessage With Message Null', function(){
+        it('VerifyMessage With Message Null', function(){
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
             let message = null;
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
@@ -445,7 +445,7 @@ describe('LibCrypto', function () {
                 assert.equal(ex.message,'Message can not be empty'); 
             }            
         })
-        it('SignMessage With Message Undefined', function(){
+        it('VerifyMessage With Message Undefined', function(){
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
             let message = undefined;
             let signature = 'H1yKwa6j5q738ueLTIjhcBzNhn4veRGKOqBGd1pYSYTGEsM8oiPqRlX1grXNWuSEH6pvqcDbuPRdm0kQD4yVen4=';
@@ -455,7 +455,7 @@ describe('LibCrypto', function () {
                 assert.equal(ex.message,'Message can not be empty'); 
             }   
         })
-        it('SignMessage With Signature Null', function(){
+        it('VerifyMessage With Signature Null', function(){
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
             let message = 'Message';
             let signature = null;
@@ -465,7 +465,7 @@ describe('LibCrypto', function () {
                 assert.equal(ex.message,'Signature can not be empty'); 
             }   
         })
-        it('SignMessage With Signature Undefined', function(){
+        it('VerifyMessage With Signature Undefined', function(){
             let publicKey = '1LZk8TPrt77rV6uSoaZWErtaZY1EPwsDm'
             let message = 'Message';
             let signature = undefined;
