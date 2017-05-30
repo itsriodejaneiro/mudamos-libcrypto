@@ -3,7 +3,7 @@ Mudamos LibCrypto
 Creates and manipulates seeds and wallets for Blockchain
 =======
 
-[NPM Link](https://www.npmjs.org/package/mudamos-lib-crypto)
+[NPM Link](https://www.npmjs.org/package/mudamos-libcrypto)
 
 [![NPM Package](https://img.shields.io/npm/v/@cycle/core.svg)](https://www.npmjs.org/package/mudamos-lib-crypto)
 
